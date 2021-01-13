@@ -19,7 +19,7 @@ This led me to Unity, which offers a lot of helpful tutorials and have a very ac
 
 
 ![unity2](https://user-images.githubusercontent.com/72814986/103153405-907e6f80-4790-11eb-856c-fb64b7925e2c.PNG)
-*Simplified 3d-environement from my thesis running in Real-Time*
+*Simplified 3d-environement running in Real-Time*
 
 
 
