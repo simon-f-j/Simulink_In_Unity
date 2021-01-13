@@ -23,7 +23,7 @@ This led me to Unity, which offers a lot of helpful tutorials and have a very ac
 
 
 
-The coordinates of the vessel is broadcast as a string containing coordinates for x,y,z as well as Euler angles φ, ψ and θ defining the orientation 
+The coordinates of the vessel is broadcast as a string containing coordinates for x,y,z as well as Euler angles φ, ψ and θ defining the orientation of the vessel.
 
 
 
