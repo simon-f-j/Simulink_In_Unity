@@ -41,7 +41,7 @@ The string then needs to be converted into ASCII codes and packaged as "uint-8":
 ![Skjermbilde](https://user-images.githubusercontent.com/72814986/104330813-ac06ab80-54ee-11eb-9bd1-e88b133740a6.PNG)
 *Simulink setup*
 
-The file "UDP_simulink.slx" is set up and should work directly with the Unity environment if set up correctly. The version of matlab used is R2020b.
+The file "UDP_simulink.slx" is set up and should work directly with the Unity environment if set up correctly. For this setup i used "simulation pacing" to slow down the simulation to real-time. The version of matlab used is R2020b.
 
 
 
