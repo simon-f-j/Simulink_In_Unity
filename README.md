@@ -8,11 +8,12 @@ Simple way to visualize a simulations from matlab/simulink in 3d by continously 
 
 
 ## Background
-This project is continuing of some of the work carried out in my masters thesis. I was tasked with setting up a simulation of an electric vessel that could be interacted with in a real-time 3d-environment. One of the things i were looking was to be able to use the simulink environment to set up everything i needed for the simulation, due to the ease of working with simulink as well as all the available packages for electromechanical systems. 
+This project is continuing of some of the work carried out in my masters thesis. I was tasked with setting up a simulation of an electric vessel that could be interacted with in a real-time 3d-environment. Since i was familiar with Simulink i really wanted to use this environment to set up the simulation due to all the available packages and general ease of working with and debugging block diagrammes. To visualise the simulation i looked into some simulink packages for 3d and found that the available software had old tutorials and documentation. After researching some more i saw some examples of using other software for visualising the data.
+
 <br/><br/>
-This led me to Unity, which were an easy alternative to set up a 3d model of the vessel and its environment to the degree i wanted. <br/>
-The solution i came up with let Simulink calculate the position and orientation in real-time, while broadcasting the position to the Unity envorinment.<br/><br/>
-I found this approach to be working well for my use-case, and think it can be a suitable alternative for visualising simulations. Also the Unity community is great with a lot of good tutorials which is super helpful.
+This led me to Unity, which offers a lot of helpful tutorials and have a very active community which were a great help. The solution i ended on were to use UDP to broadcast the position and orientation of the vessel from Simulink to Unity. This is a one way communication, meaning that Unity won't influence the simulation, only visualise what is happening. For my use-case this worked great, and i tought that i should make the resources used more available, since i used a lot of time to get find and get everything to work.
+
+
 
 <br/>
 
@@ -36,7 +37,7 @@ In Unity: for the object you want to move with data trough UDP, simply add the '
 <br/>
 
 In Simulink: The package "embeded coder" is required, as it contains the blocks "Send UDP" and "Byte Pack". The output should be a string with the position and orientation separated by "," example: "1.00,0,0,0,0,0"<br/>
-The string then needs to be converted into ASCII and packaged as "uint-8": 
+The string then needs to be converted into ASCII codes and packaged as "uint-8": 
 ![Skjermbilde](https://user-images.githubusercontent.com/72814986/104330813-ac06ab80-54ee-11eb-9bd1-e88b133740a6.PNG)
 *Simulink setup*
 
@@ -45,7 +46,7 @@ The file "UDP_simulink.slx" is set up and should work directly with the Unity en
 
 
 ## Python
-To test that the Unity environment is set up correctly, the python file 'Unity_communication.py' can be used. This broadcasts a string of (x,z,y,φ,ψ,θ):<br/><br/>
+To test that the Unity environment is set up correctly, the python file 'Unity_communication.py' can be used. This broadcasts a string of 6-numbers (position and orientation) separated by a comma: <br/><br/>
 **Required python packages**:
 - numpy
 
