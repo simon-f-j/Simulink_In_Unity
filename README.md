@@ -43,10 +43,11 @@ The string then needs to be converted into ASCII codes and packaged as "uint-8":
 
 The file "UDP_simulink.slx" is set up and should work directly with the Unity environment if set up correctly. For this setup i used "simulation pacing" to slow down the simulation to real-time. The version of matlab used is R2020b.
 
-
+## UDP test
+One way to test that the communication functions correctly is to use the tool "UDP test", and listen to the local ip-address.
 
 ## Python
-To test that the Unity environment is set up correctly, the python file 'Unity_communication.py' can be used. This broadcasts a string of 6-numbers (position and orientation) separated by a comma: <br/><br/>
+Another way to test that the Unity environment is set up correctly is to use the python file 'Unity_communication.py'. This broadcasts a string of 6-numbers (position and orientation) separated by a comma: <br/><br/>
 **Required python packages**:
 - numpy
 
